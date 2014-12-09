@@ -1,5 +1,5 @@
 /*
- * Base PLus Commission Employee Subclass
+ * Base Plus Commission Employee Subclass
  * Used to demonstrate inheritance
  * Based On "Java How To Program, 10, Early Objects" - Chapter 9.
  */
