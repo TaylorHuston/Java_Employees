@@ -1,7 +1,7 @@
 /*
  * Commission Employee Subclass
  * Used to demonstrate Polymorphism and Inheritance
- * Based On "Java How To Program, 10, Early Objects" - Chapter 10.
+ * Based On "Java How To Program, 10e, Early Objects" - Chapter 10.
  */
 
 public class CommissionEmployee extends Employee {

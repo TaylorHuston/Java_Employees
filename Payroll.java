@@ -1,8 +1,9 @@
 /*
  * Payroll Class
  * Used to demonstrate Polymorphism and Inheritance
- * Based On "Java How To Program, 10, Early Objects" - Chapter 10.
+ * Based On "Java How To Program, 10e, Early Objects" - Chapter 10.
  */
+
 public class Payroll {
     
     public static void main(String[] args) {
