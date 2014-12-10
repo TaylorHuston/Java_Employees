@@ -33,9 +33,9 @@ public class SalariedEmployee extends Employee {
     }//End getSalary
     
     @Override
-    public double getEarnings() {
+    public double getPaymentAmount() {
         return getSalary();
-    }//End getEarnings
+    }//End getPaymentAmount
     
     
     @Override

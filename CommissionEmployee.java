@@ -51,11 +51,11 @@ public class CommissionEmployee extends Employee {
     }//End getCommission
     
     @Override
-    public double getEarnings() {
+    public double getPaymentAmount() {
         return getCommission() * getGross();
-    }//End getEarnings
+    }//End getPaymentAmount
     
-    
+  
     @Override
     public String toString() {
         return String.format("%s%n%s: $%.2f%n%s: %.2f", super.toString(), 
@@ -68,7 +68,7 @@ public class CommissionEmployee extends Employee {
        CommissionEmployee emp = new CommissionEmployee("Bob", "Smith", "111-11-111",
                100000, .06);
 
-       System.out.printf("%s:%n%s%n%s $%.2f%n","From toString()",emp, "Earnings", emp.getEarnings());
+       System.out.printf("%s:%n%s%n%s $%.2f%n","From toString()",emp, "Earnings", emp.getPaymentAmount());
     }//End Main
     
 }//End CommissionEmployee

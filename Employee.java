@@ -4,7 +4,7 @@
  * Based On "Java How To Program, 10e, Early Objects" - Chapter 10.
  */
 
-public abstract class Employee {
+public abstract class Employee implements Payable {
     private final String firstName;
     private final String lastName;
     private final String ssNumber;
@@ -35,6 +35,6 @@ public abstract class Employee {
     }//End toString
     
     //Abstract method, no implementation
-    public abstract double getEarnings();
+    public abstract double getPaymentAmount();
     
 }

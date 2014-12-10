@@ -51,13 +51,13 @@ public class HourlyEmployee extends Employee {
     }//End getHours
     
     @Override
-    public double getEarnings() {
+    public double getPaymentAmount() {
         if(hours <=40) { //No overtime
             return (getHours() * getWage());
         } else {
             return ((getHours() - 40) * (getWage() * 1.5) + 40 * getWage()); 
         }
-    }//End getEarnings
+    }//End getPaymentAmount
     
     
     @Override
@@ -73,7 +73,7 @@ public class HourlyEmployee extends Employee {
        HourlyEmployee emp = new HourlyEmployee("John", "Jackson", "444-44-444",
        10, 50);
        
-       System.out.printf("%s:%n%s%n%s $%.2f%n","From toString()",emp, "Earnings", emp.getEarnings());
+       System.out.printf("%s:%n%s%n%s $%.2f%n","From toString()",emp, "Earnings", emp.getPaymentAmount());
     }//End Main
     
 }//End HourlyEmployee

@@ -34,7 +34,7 @@ public class Payroll {
                 System.out.printf("%s: $%.2f%n", "New Base Salary",tempEmp.getBaseSalary());
             }
             
-            System.out.printf("%s: $%.2f%n%n","Earnings", currentEmp.getEarnings());
+            System.out.printf("%s: $%.2f%n%n","Earnings", currentEmp.getPaymentAmount());
         }
         
         for (int j = 0; j < myEmployees.length; j++) {

@@ -3,6 +3,7 @@
  * Used to demonstrate Interfaces
  * Based On "Java How To Program, 10, Early Objects" - Chapter 10.
  */
+
 public class Invoice implements Payable {
     private final String partNumber;
     private final String partDesc;

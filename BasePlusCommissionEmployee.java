@@ -33,9 +33,9 @@ public class BasePlusCommissionEmployee extends CommissionEmployee {
     }//End getBaseSalary
     
     @Override
-    public double getEarnings() {
-        return getBaseSalary() + super.getEarnings();
-    }//End getEarnings
+    public double getPaymentAmount() {
+        return getBaseSalary() + super.getPaymentAmount();
+    }//End getPaymentAmount
     
     @Override
     public String toString() {
@@ -48,7 +48,7 @@ public class BasePlusCommissionEmployee extends CommissionEmployee {
        BasePlusCommissionEmployee emp = new BasePlusCommissionEmployee("Jane", "Smith", 
                "222-22-222", 70000, .04, 500);
   
-       System.out.printf("%s:%n%s%n%s: $%.2f%n","From toString()",emp, "Earnings", emp.getEarnings());
+       System.out.printf("%s:%n%s%n%s: $%.2f%n","From toString()",emp, "Earnings", emp.getPaymentAmount());
     }//End Main 
     
 }//End BasePlusCommissionEmployee
