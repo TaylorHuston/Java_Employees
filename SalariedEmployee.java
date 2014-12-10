@@ -1,5 +1,5 @@
 /*
- * Salaried Employee subclass
+ * Salaried Employee Subclass
  * Used to demonstrate Polymorphism and Inheritance
  * Based On "Java How To Program, 10, Early Objects" - Chapter 10.
  */
@@ -10,7 +10,7 @@ public class SalariedEmployee extends Employee {
     //Constructor
     public SalariedEmployee(String nFirstName, String nLastName, String nssNumber,
             double nWeeklySalary) {
-        super(nFirstName, nLastName, nssNumber);
+        super(nFirstName, nLastName, nssNumber); //Call superclass constructor
         
         if(nWeeklySalary < 0.0) {
             throw new IllegalArgumentException("Weekly salary must be positive");
@@ -21,7 +21,7 @@ public class SalariedEmployee extends Employee {
     
     //Set and Get
     public void setSalary(double nWeeklySalary) {
-        if(nWeeklySalary < 0.0) {
+        if(nWeeklySalary < 0.0) { //Calidate weekly salary
             throw new IllegalArgumentException("Weekly salary must be positive");
         }
 
@@ -32,7 +32,6 @@ public class SalariedEmployee extends Employee {
         return weeklySalary;
     }//End getSalary
     
-    
     @Override
     public double getEarnings() {
         return getSalary();
@@ -41,7 +40,7 @@ public class SalariedEmployee extends Employee {
     
     @Override
     public String toString() {
-        return String.format("Salaried Employee%n%s%n%s $%.2f", super.toString(), 
+        return String.format("%s%n%s: $%.2f", super.toString(), 
                 "Salary", getSalary());
     }//End toString
     
@@ -49,8 +48,9 @@ public class SalariedEmployee extends Employee {
     //SalariedEmployee test
     public static void main(String[] args) {
        SalariedEmployee emp = new SalariedEmployee("Jack", "Dangerfield", "333-33-333",
-       3000);
+               3000);
        
-       System.out.printf("%n%s:%n%s%n","From toString()",emp);
+       System.out.printf("%s:%n%s%n","From toString()",emp);
     }//End Main
-}
+    
+}//End SalariedEmployee

@@ -1,22 +1,23 @@
 /*
- * Commission Employee subclass
+ * Commission Employee Subclass
  * Used to demonstrate Polymorphism and Inheritance
  * Based On "Java How To Program, 10, Early Objects" - Chapter 10.
  */
 
 public class CommissionEmployee extends Employee {
-
     private double grossSales;
     private double commissionRate;
     
-    public CommissionEmployee(String nFirstName, String nLastName, String nssNumber, double nGrossSales, double nCommissionRate) {
-        super(nFirstName, nLastName, nssNumber);
+    //Constructor
+    public CommissionEmployee(String nFirstName, String nLastName, String nssNumber, 
+            double nGrossSales, double nCommissionRate) {
+        super(nFirstName, nLastName, nssNumber); //Call superclass constructor
         
-        if (nGrossSales < 0.0) {
+        if (nGrossSales < 0.0) { //Validate sales
             throw new IllegalArgumentException("Gross sales must exceed $0");
         }
         
-        if (nCommissionRate <= 0.0 || nCommissionRate >= 1.0) {
+        if (nCommissionRate <= 0.0 || nCommissionRate >= 1.0) { //Validate commission rate
             throw new IllegalArgumentException ("Commission rate must be between 0.0 and 1.0");
         }
         
@@ -26,7 +27,7 @@ public class CommissionEmployee extends Employee {
     
     //Setters and Getters
     public void setGross(double nGrossSales) {
-        if (nGrossSales < 0.0) {
+        if (nGrossSales < 0.0) { //Validate sales
             throw new IllegalArgumentException("Gross sales must exceed $0");
         }
         
@@ -38,7 +39,7 @@ public class CommissionEmployee extends Employee {
     }//End getGross
     
     public void setCommission(double nCommissionRate) {
-        if (nCommissionRate <= 0.0 || nCommissionRate >= 1.0) {
+        if (nCommissionRate <= 0.0 || nCommissionRate >= 1.0) { //Validate commission rate
             throw new IllegalArgumentException ("Commission rate must be between 0 and 1");
         }
         
@@ -54,18 +55,20 @@ public class CommissionEmployee extends Employee {
         return getCommission() * getGross();
     }//End getEarnings
     
+    
     @Override
     public String toString() {
-        return String.format("%s: %s %s%n%s: %s%n%s: $%.2f%n%s: %.2f", "Commission", getFirstName(), getLastName(),
-                "SS Number", getSS(), "Gross Sales", getGross(), "Commission Rate", getCommission());
-    }//end toString
+        return String.format("%s%n%s: $%.2f%n%s: %.2f", super.toString(), 
+                "Gross Sales", getGross(), 
+                "Commission Rate", getCommission());
+    }//End toString
     
     //CommissionEmployee test
     public static void main(String[] args) {
        CommissionEmployee emp = new CommissionEmployee("Bob", "Smith", "111-11-111",
-       100000, .06);
+               100000, .06);
 
-       System.out.printf("%n%s:%n%s%n%s $%.2f%n","From toString()",emp, "Earnings", emp.getEarnings());
+       System.out.printf("%s:%n%s%n%s $%.2f%n","From toString()",emp, "Earnings", emp.getEarnings());
     }//End Main
     
 }//End CommissionEmployee

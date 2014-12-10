@@ -1,6 +1,6 @@
 /*
- * Employee abstract Superclass
- * Used to demonstrate Polymorphism
+ * Employee Abstract Superclass
+ * Used to demonstrate Polymorphism and Inheritance
  * Based On "Java How To Program, 10, Early Objects" - Chapter 10.
  */
 public abstract class Employee {
@@ -8,11 +8,11 @@ public abstract class Employee {
     private final String lastName;
     private final String ssNumber;
     
-        public Employee(String nFirstName, String nLastName, String nssNumber) {
-            this.firstName = nFirstName;
-            this.lastName  = nLastName;
-            this.ssNumber = nssNumber;
-        }
+    public Employee(String nFirstName, String nLastName, String nssNumber) {
+        this.firstName = nFirstName;
+        this.lastName  = nLastName;
+        this.ssNumber = nssNumber;
+    }
         
     public String getFirstName() {
         return firstName;
