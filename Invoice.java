@@ -25,7 +25,7 @@ public class Invoice implements Payable {
         this.pricePerItem = nPricePerItem;
         this.partDesc = nPartDesc;
         this.partNumber = nPartNumber;
-    }//End Constructor
+    } //End Constructor
     
     //Getters and Setters
     public void setQuantity(int nQuantity) {
@@ -34,11 +34,11 @@ public class Invoice implements Payable {
         }
         
         this.quantity = nQuantity;
-    }//End setQuantity
+    } //End setQuantity
     
     public int getQuantity() {
         return quantity;
-    }//End getQuantity
+    } //End getQuantity
     
     public void setPricePerItem(double nPricePerItem) {
         if (nPricePerItem <= 0.0) { //Validate price
@@ -46,39 +46,41 @@ public class Invoice implements Payable {
         }
         
         this.pricePerItem = nPricePerItem;
-    }//End setPricePerItem
+    } //End setPricePerItem
     
     public double getPricePerItem() {
         return pricePerItem;
-    }//End getPricePerItem
+    } //End getPricePerItem
     
     public String getPartNumber() {
         return partNumber;
-    }//End getPartNumber
+    } //End getPartNumber
     
     public String getPartDesc() {
         return partDesc;
-    }//End partDesc
+    } //End partDesc
     
     @Override
     public String toString() {
         return String.format("%s: %n%s: %s (%s) %n%s: %d %n%s: $%,.2f",
             "Invoice", "Part #", getPartNumber(), getPartDesc(),
             "Quantity", getQuantity(), "PPI", getPricePerItem());
-    }//End toString
+    } //End toString
     
     //Required as a Payable interface
     @Override
     public double getPaymentAmount() {
         return getQuantity() * getPricePerItem();
-    }//End getPaymentAmount
+    } //End getPaymentAmount
     
     //Test method for Invoice
     public static void main(String[] args) {
-        Invoice testInvoice = new Invoice("111-XYZ","Thingamajig 9000",10, 15.50);
+        Invoice testInvoice = new Invoice("111-XYZ", "Thingamajig 9000", 10, 
+                15.50);
         
-        System.out.printf("%s%n%s%n%s: $%.2f%n","Item",testInvoice,"Total Cost", 
-                testInvoice.getPaymentAmount());
-    }//End Main
+        System.out.printf("%s%n%s%n%s: $%.2f%n", "Item", testInvoice, 
+                "Total Cost", testInvoice.getPaymentAmount());
+        
+    } //End Main
     
-}//End Invoice
+} //End Invoice
