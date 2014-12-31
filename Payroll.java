@@ -7,12 +7,12 @@
 public class Payroll {
     
     public static void main(String[] args) {
-        CommissionEmployee emp1 = new CommissionEmployee("Malcolm", "Reynold", "111-11-111",
-                100000, .06);
-        BasePlusCommissionEmployee emp2 = new BasePlusCommissionEmployee("Zoe", "Wash", 
-                "222-22-222", 100000, .05, 500);
-        SalariedEmployee emp3 = new SalariedEmployee("Hoburn", "Wash", "333-33-333",
-                3000);
+        CommissionEmployee emp1 = new CommissionEmployee("Malcolm", "Reynold", 
+                "111-11-111", 100000, .06);
+        BasePlusCommissionEmployee emp2 = new BasePlusCommissionEmployee("Zoe", 
+                "Wash", "222-22-222", 100000, .05, 500);
+        SalariedEmployee emp3 = new SalariedEmployee("Hoburn", "Wash", 
+                "333-33-333", 3000);
         HourlyEmployee emp4 = new HourlyEmployee("Jayne", "Cobb", "444-44-444",
                 10, 50);
         
@@ -26,20 +26,24 @@ public class Payroll {
         for (Employee currentEmp : myEmployees) {
             System.out.println(currentEmp);
             
-            if(currentEmp instanceof BasePlusCommissionEmployee) {
+            if (currentEmp instanceof BasePlusCommissionEmployee) {
+                //Downcast in order to call methods
                 BasePlusCommissionEmployee tempEmp = 
-                        (BasePlusCommissionEmployee) currentEmp;  //Downcast in order to call methods
+                        (BasePlusCommissionEmployee) currentEmp;  
                         
                 tempEmp.setBaseSalary(tempEmp.getBaseSalary() * 1.10);
-                System.out.printf("%s: $%.2f%n", "New Base Salary",tempEmp.getBaseSalary());
+                System.out.printf("%s: $%.2f%n", "New Base Salary", 
+                        tempEmp.getBaseSalary());
             }
             
-            System.out.printf("%s: $%.2f%n%n","Earnings", currentEmp.getPaymentAmount());
+            System.out.printf("%s: $%.2f%n%n", "Earnings", 
+                    currentEmp.getPaymentAmount());
         }
         
         for (int j = 0; j < myEmployees.length; j++) {
-            System.out.printf("%s %d %s %s%n", "Employee", j+1, "is a(n)", myEmployees[j].getClass().getName());
+            System.out.printf("%s %d %s %s%n", "Employee", j+1, "is a(n)", 
+                    myEmployees[j].getClass().getName());
         }
-    }//End Main
+    } //End Main
     
-}//End Payroll
+} //End Payroll
