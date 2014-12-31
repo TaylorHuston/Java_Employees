@@ -13,67 +13,70 @@ public class HourlyEmployee extends Employee {
         double nWage, double nHours) {
         super(nFirstName, nLastName, nssNumber); //Call superclass constructor
         
-        if(nWage < 0.0) { //validate hourly wage
-            throw new IllegalArgumentException("Hourly wage must be positive");
+        if (nWage < 0.0) { //validate hourly wage
+            throw new IllegalArgumentException
+                        ("Hourly wage must be positive");
         }
         
-        if(nHours < 0.0 || nHours > 168) {  //Validate hours
-            throw new IllegalArgumentException("Hours worked must be between 0 and 168");
+        if (nHours < 0.0 || nHours > 168) {  //Validate hours
+            throw new IllegalArgumentException
+                        ("Hours worked must be between 0 and 168");
         }
         
         this.wage = nWage;
         this.hours = nHours;
-    }//End Consturctor
+    } //End Consturctor
     
     //Setters and Getters
     public void setWage(double nWage) {
-        if(nWage < 0.0) { //Validate wage
-            throw new IllegalArgumentException("Hourly wage must be positive");
+        if (nWage < 0.0) { //Validate wage
+            throw new IllegalArgumentException
+                        ("Hourly wage must be positive");
         }
 
         this.wage = nWage;
-    }//End setWage
+    } //End setWage
     
     public double getWage() {
         return wage;
-    }//End getWage
+    } //End getWage
     
     public void setHours(double nHours) {
-        if(nHours < 0.0 || nHours > 168) { //Validate hours
-            throw new IllegalArgumentException("Hours worked must be between 0 and 168");
+        if (nHours < 0.0 || nHours > 168) { //Validate hours
+            throw new IllegalArgumentException
+                        ("Hours worked must be between 0 and 168");
         }
 
         this.hours = nHours;
-    }//End setHours
+    } //End setHours
     
     public double getHours() {
         return hours;
-    }//End getHours
+    } //End getHours
     
     @Override
     public double getPaymentAmount() {
-        if(hours <=40) { //No overtime
+        if (hours <= 40) { //No overtime
             return (getHours() * getWage());
         } else {
             return ((getHours() - 40) * (getWage() * 1.5) + 40 * getWage()); 
         }
-    }//End getPaymentAmount
-    
+    } //End getPaymentAmount
     
     @Override
     public String toString() {
         return String.format("%s%n%s: $%.2f%n%s: %.2f", super.toString(), 
-               "Wage", getWage(), 
-               "Hours", getHours());
-    }//End toString
+               "Wage", getWage(), "Hours", getHours());
+    } //End toString
     
     
     //SalariedEmployee test
     public static void main(String[] args) {
-       HourlyEmployee emp = new HourlyEmployee("John", "Jackson", "444-44-444",
-       10, 50);
+       HourlyEmployee emp = new 
+            HourlyEmployee("John", "Jackson", "444-44-444", 10, 50);
        
-       System.out.printf("%s:%n%s%n%s $%.2f%n","From toString()",emp, "Earnings", emp.getPaymentAmount());
-    }//End Main
+       System.out.printf("%s:%n%s%n%s $%.2f%n", "From toString()", emp, 
+               "Earnings", emp.getPaymentAmount());
+    } //End main
     
-}//End HourlyEmployee
+} //End HourlyEmployee
