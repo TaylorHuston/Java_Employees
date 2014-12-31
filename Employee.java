@@ -14,25 +14,25 @@ public abstract class Employee implements Payable {
         this.firstName = nFirstName;
         this.lastName  = nLastName;
         this.ssNumber = nssNumber;
-    }//End Constructor
+    } //End Constructor
         
     public String getFirstName() {
         return firstName;
-    }//End getFirstName
+    } //End getFirstName
     
     public String getLastName() {
         return lastName;
-    }//End getLastName
+    } //End getLastName
     
     public String getSS() {
         return ssNumber;
-    }//End getSS
+    } //End getSS
     
     @Override
     public String toString() {
-        return String.format("%s: %s %s%n%s: %s", "Name", getFirstName(), getLastName(),
-                "SS Number", getSS());
-    }//End toString
+        return String.format("%s: %s %s%n%s: %s", "Name", getFirstName(), 
+                getLastName(), "SS Number", getSS());
+    } //End toString
     
     //Abstract method, no implementation
     public abstract double getPaymentAmount();
