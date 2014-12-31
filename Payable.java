@@ -6,4 +6,4 @@
 
 public interface Payable {
     double getPaymentAmount();
-}//End Payable
+} //End Payable
